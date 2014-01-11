@@ -1,7 +1,6 @@
 namespace NServiceBus.Logging
 {
     using System;
-    using Loggers;
 
     public class LogManager
     {

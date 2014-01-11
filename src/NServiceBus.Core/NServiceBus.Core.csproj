@@ -55,9 +55,6 @@
     <Reference Include="Janitor">
       <HintPath>..\packages\Janitor.Fody\Lib\portable-net4+sl4+wp7+win8+MonoAndroid16+MonoTouch40\Janitor.dll</HintPath>
     </Reference>
-    <Reference Include="log4net">
-      <HintPath>..\packages\log4net\lib\2.0\log4net.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json\lib\net40\Newtonsoft.Json.dll</HintPath>
@@ -138,6 +135,10 @@
     <Compile Include="Licensing\TrialLicenseReader.cs" />
     <Compile Include="Licensing\UniversalDateParser.cs" />
     <Compile Include="Licensing\UserSidChecker.cs" />
+    <Compile Include="Logging\DefaultLogger.cs" />
+    <Compile Include="Logging\DefaultLoggerFactory.cs" />
+    <Compile Include="Logging\NullLogger.cs" />
+    <Compile Include="Logging\NullLoggerFactory.cs" />
     <Compile Include="Persistence\Raven\RavenUserInstaller.cs" />
     <Compile Include="Installation\PerformanceMonitorUsersInstaller.cs" />
     <Compile Include="Gateway\GatewayExtensions.cs" />
@@ -366,7 +367,6 @@
     <Compile Include="Hosting\Configuration\ConfigurationManager.cs" />
     <Compile Include="Hosting\Configuration\EndpointNameAttribute.cs" />
     <Compile Include="Hosting\Configuration\EndpointSLAAttribute.cs" />
-    <Compile Include="Hosting\Configuration\IConfigureLogging.cs" />
     <Compile Include="Hosting\Configuration\IConfigureThisEndpoint.cs" />
     <Compile Include="Hosting\Configuration\IWant.cs" />
     <Compile Include="Hosting\GenericHost.cs" />
@@ -406,22 +406,6 @@
     <Compile Include="Licensing\LicenseManager.cs" />
     <Compile Include="Logging\ILog.cs" />
     <Compile Include="Logging\ILoggerFactory.cs" />
-    <Compile Include="Logging\Internal\ReflectionExtensions.cs" />
-    <Compile Include="Logging\Internal\TypeExtensions.cs" />
-    <Compile Include="Logging\Log4NetBridge\ConfigureInternalLog4NetBridge.cs" />
-    <Compile Include="Logging\Log4NetBridge\Log4NetBridgeAppender.cs" />
-    <Compile Include="Logging\Loggers\ConsoleLogger.cs" />
-    <Compile Include="Logging\Loggers\ConsoleLoggerFactory.cs" />
-    <Compile Include="Logging\Loggers\Log4NetAdapter\Log4NetAppenderFactory.cs" />
-    <Compile Include="Logging\Loggers\Log4NetAdapter\Log4NetConfigurator.cs" />
-    <Compile Include="Logging\Loggers\Log4NetAdapter\Log4NetLogger.cs" />
-    <Compile Include="Logging\Loggers\Log4NetAdapter\Log4NetLoggerFactory.cs" />
-    <Compile Include="Logging\Loggers\NLogAdapter\NLogConfigurator.cs" />
-    <Compile Include="Logging\Loggers\NLogAdapter\NLogLogger.cs" />
-    <Compile Include="Logging\Loggers\NLogAdapter\NLogLoggerFactory.cs" />
-    <Compile Include="Logging\Loggers\NLogAdapter\NLogTargetFactory.cs" />
-    <Compile Include="Logging\Loggers\NullLogger.cs" />
-    <Compile Include="Logging\Loggers\NullLoggerFactory.cs" />
     <Compile Include="Logging\LoggingLibraryException.cs" />
     <Compile Include="Logging\LogManager.cs" />
     <Compile Include="SecondLevelRetries\DefaultRetryPolicy.cs" />
@@ -490,7 +474,6 @@
     <Compile Include="Serializers\XML\XmlMessageSerializer.cs" />
     <Compile Include="Serializers\XML\XmlSanitizingStream.cs" />
     <Compile Include="ServiceAsyncResult.cs" />
-    <Compile Include="SetLoggingLibrary.cs" />
     <Compile Include="Settings\Endpoint.cs" />
     <Compile Include="Settings\TransactionSettings.cs" />
     <Compile Include="SyncConfig.cs" />

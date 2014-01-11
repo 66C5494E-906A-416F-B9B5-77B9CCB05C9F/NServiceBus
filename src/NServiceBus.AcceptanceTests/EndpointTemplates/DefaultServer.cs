@@ -16,9 +16,6 @@
         {
             var settings = runDescriptor.Settings;
 
-            SetLoggingLibrary.Log4Net(null, new ContextAppender(runDescriptor.ScenarioContext, endpointConfiguration));
-
-
             var types = GetTypesToUse(endpointConfiguration);
 
             var transportToUse = settings.GetOrNull("Transport");

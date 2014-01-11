@@ -1,12 +1,10 @@
-namespace NServiceBus.Logging.Loggers
+namespace NServiceBus.Logging
 {
     using System;
 
-    /// <summary>
-    /// 
-    /// </summary>
-    public class NullLoggerFactory : ILoggerFactory
+    class NullLoggerFactory : ILoggerFactory
     {
+
         public ILog GetLogger(Type type)
         {
             return new NullLogger();
